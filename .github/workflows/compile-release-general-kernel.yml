@@ -84,7 +84,7 @@ on:
         default: ""
         type: choice
         options:
-          - 
+          - ""
           - -CloneWolf-Jiang
           - -ophub
           - -happy-new-year
@@ -107,7 +107,7 @@ on:
           - false
 
 env:
-  TZ: America/New_York
+  TZ: Asia/Shanghai
 
 jobs:
   build:
