@@ -187,6 +187,7 @@ jobs:
           kernel_sign: ${{ inputs.kernel_sign }}
           kernel_config: ${{ inputs.kernel_config }}
           compress_format: ${{ inputs.compress_format }}
+          auto_kernel : ${{ inputs.kernel_auto }}
 
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
