@@ -81,10 +81,9 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: ""
+        default: "-CloneWolf-Jiang"
         type: choice
         options:
-          - ""
           - -CloneWolf-Jiang
           - -ophub
           - -happy-new-year
