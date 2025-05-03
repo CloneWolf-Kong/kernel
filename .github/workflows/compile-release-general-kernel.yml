@@ -123,10 +123,6 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           echo "用户选择的参数:"
-          for param in $(echo ${{ toJSON(github.event.inputs) }} | jq -r 'keys[]'); do
-            value=$(echo ${{ toJSON(github.event.inputs) }} | jq -r ".[$param]")
-            echo "$param: $value"
-          done
           docker rmi $(docker images -q) 2>/dev/null
           [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
           sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android 2>/dev/null
