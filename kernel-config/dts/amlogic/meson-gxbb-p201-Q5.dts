@@ -10,7 +10,7 @@
 #include "meson-gxbb-p20x.dtsi"
 
 / {
-	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb", "amlogic,meson-gxbb-Q5";
+	compatible = "amlogic,p201", "amlogic,meson-gxbb", "amlogic,meson-gxbb-Q5";
 	model = "Moblie Box(JiangSu)-Q5";
 
 	sound {
@@ -50,7 +50,7 @@
 	aliases {
 		serial0 = &uart_AO;
 		ethernet0 = &ethmac;
-		wlan0 = &rtl8189etv;
+		ethernet1 = &rtl8189etv;
 	};
 
 };
@@ -93,7 +93,7 @@
 	vmmc-supply = <&vddao_3v3>;
 	vqmmc-supply = <&vddio_boot>;
 
-	rtl8189etv: sdio_wifi@1 {
+	rtl8189etv: wifi@1 {
 		reg = <1>;
 		compatible = "realtek,rtl8189es";
 	};
