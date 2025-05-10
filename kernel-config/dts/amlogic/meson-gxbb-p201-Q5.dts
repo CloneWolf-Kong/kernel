@@ -54,7 +54,9 @@
 	};
 
 };
-
+&aiu {
+	status = "okay";
+};
 
 &ethmac {
 	status = "okay";
