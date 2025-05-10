@@ -9,7 +9,7 @@
 
 #include "meson-gxbb-p201.dts"
 / {
-	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb";
+	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb-Q5";
 	model = "Moblie Box(JiangSu)-Q5";
 
 
