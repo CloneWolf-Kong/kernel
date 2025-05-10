@@ -11,11 +11,16 @@
 / {
 	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb";
 	model = "Moblie Box(JiangSu)-Q5";
-};
 
+
+	aliases {
+		wlan0 = &rtl8189etv;
+	};
+
+};
 /* Wireless SDIO Module */
 &sd_emmc_a {
-	rtl8189: wifi@1 {
+	rtl8189etv: wifi@1 {
 		reg = <1>;
 		compatible = "realtek,rtl8189fs";
 	};
