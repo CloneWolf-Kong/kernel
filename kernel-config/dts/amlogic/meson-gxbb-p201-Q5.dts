@@ -7,19 +7,57 @@
 
 /dts-v1/;
 
-#include "meson-gxbb-p201.dts"
+#include "meson-gxbb-p20x.dtsi"
+
 / {
 	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb-Q5","amlogic,meson-gxbb";
 	model = "Moblie Box(JiangSu)-Q5";
 
 
 	aliases {
+		serial0 = &uart_AO;
+		ethernet0 = &ethmac;
 		wlan0 = &rtl8189etv;
 	};
 
 };
+
+
+&ethmac {
+	status = "okay";
+	pinctrl-0 = <&eth_rmii_pins>;
+	pinctrl-names = "default";
+	phy-mode = "rmii";
+
+	snps,reset-gpio = <&gpio GPIOZ_14 0>;
+	snps,reset-delays-us = <0>, <10000>, <1000000>;
+	snps,reset-active-low;
+};
+
 /* Wireless SDIO Module */
 &sd_emmc_a {
+	status = "okay";
+	pinctrl-0 = <&sdio_pins>;
+	pinctrl-1 = <&sdio_clk_gate_pins>;
+	pinctrl-names = "default", "clk-gate";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	bus-width = <4>;
+	cap-sd-highspeed;
+	max-frequency = <50000000>;
+
+	non-removable;
+	disable-wp;
+
+	/* WiFi firmware requires power to be kept while in suspend */
+	keep-power-in-suspend;
+
+	mmc-pwrseq = <&sdio_pwrseq>;
+
+	vmmc-supply = <&vddao_3v3>;
+	vqmmc-supply = <&vddio_boot>;
+
 	rtl8189etv: sdio_wifi@1 {
 		reg = <1>;
 		compatible = "realtek,rtl8189es";
