@@ -10,7 +10,7 @@
 #include "meson-gxbb-p20x.dtsi"
 
 / {
-	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb-Q5","amlogic,meson-gxbb";
+	compatible = "amlogic,p201,Q5", "amlogic,meson-gxbb", "amlogic,meson-gxbb-Q5";
 	model = "Moblie Box(JiangSu)-Q5";
 
 	sound {
